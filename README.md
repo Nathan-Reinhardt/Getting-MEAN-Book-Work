@@ -12,4 +12,5 @@ challenging concept to do well.
 
 1. This process is called routing. The code that connects a URL request to the controller code
    is called route.
-2. 
+2. When you want to add an external module you use the command npm install.
+3. It appears in the console screen.
