@@ -1,5 +1,5 @@
 # Nathan Reinhardt Getting MEAN Project
-## Chapter 3
+## Chapter 4
 Link - https://mysterious-stream-60696.herokuapp.com/
 ![Screenshot](Chapter4GettingMean.png)
 
