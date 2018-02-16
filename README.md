@@ -15,7 +15,7 @@ Created multiple views for new pages to navigate to.
 1. This layout allows to have mixin code that gets called. A mixin is a function that can
    be called through out the code.
 2. The location page routes to location-info.jade in the views folder. This file calls the
-   outputRating function which is stored in includes, which is created as a mixin.
+   outputRating function which is stored in includes. This is called a mixin.
 3. Express provides the routing functionality. This is front end functionality.
 
 ## Chapter 3
