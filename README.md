@@ -1,4 +1,24 @@
 # Nathan Reinhardt Getting MEAN Project
+## Chapter 5
+Link - https://mysterious-stream-60696.herokuapp.com/
+![Screenshot](Chapter5GettingMean.png)
+
+In Chapter 5 the book went into how to set up a local and live database for the website.
+It was pretty fun having a ton of console windows open performing different actions while
+creating the databases.  The hardest part for me was getting my dumped data pushed up to the
+live database. I had the right credentials for the data, but I kept getting Authentication
+Errors which meant either my databse host was typed wrong or the username and password could
+have been wrong. Went through each one at a time to see which one gave the error. I got it
+randomly entering the same information, so it could have been a one off error while typing.
+Now the database has been set.
+
+1. Database entries in MongoDB are called documents.
+2. The difference between mongod and mongo are huge. mongod runs the database in the
+background in the machine, while mongo is the shell that allows you access to work with
+mongod.
+3. Heroku needs MLab to access our live database for Heroku. We can only run it locally
+without MLab.
+
 ## Chapter 4
 Link - https://mysterious-stream-60696.herokuapp.com/
 ![Screenshot](Chapter4GettingMean.png)
