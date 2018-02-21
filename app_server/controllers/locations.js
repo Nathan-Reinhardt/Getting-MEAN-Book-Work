@@ -8,15 +8,15 @@ module.exports.homelist = function(req, res){
     },
     sidebar: "Looking for wifi and a seat? Loc8r helps you find places to work when out and about. Perhaps with coffee, cake or a pint? Let Loc8r help you find the place you're looking for.",
     locations: [{
-      name: 'Starcups',
-      address: '125 High Street, Reading, RG6 1PS',
-      rating: 3,
-      facilities: ['Hot drinks', 'Food', 'Premium wifi'],
-      distance: '100m'
+      name: 'Tully\'s',
+      address: '24 N Tacoma Ave, Tacoma, WA 98403',
+      rating: 4,
+      facilities: ['Hot drinks', 'Pastries', 'Smoothies'],
+      distance: 'unknown'
     },{
       name: 'Cafe Hero',
       address: '125 High Street, Reading, RG6 1PS',
-      rating: 4,
+      rating: 3,
       facilities: ['Hot drinks', 'Food', 'Premium wifi'],
       distance: '200m'
     },{
@@ -31,44 +31,41 @@ module.exports.homelist = function(req, res){
 /* GET 'Location info' page */
 module.exports.locationInfo = function(req, res) {
     res.render('location-info', {
-        title: 'Starcups',
+        title: 'Tully\'s',
         pageHeader: {
-            title: 'Starcups'
+            title: 'Tully\'s'
         },
         sidebar: {
             context: 'is on Loc8r because it has accessible wifi and space to sit down with your laptop and get some work done.',
             callToAction: 'If you\'ve been and you like it - or if you don\'t - please leave a review to help other people just like you.'
         },
         location: {
-          name: 'Starcups',
-          address: '125 High Street, Reading, RG6 1PS',
-          rating: 3,
-          facilities: ['Hot drinks', 'Food', 'Premium wifi'],
-          coords: {lat: 51.455041, lng: -0.9690884},
+          name: 'Tully\'s',
+          address: '24 N Tacoma Ave, Tacoma, WA 98403',
+          rating: 4,
+          facilities: ['Hot drinks', 'Pastries', 'Smooties'],
+          coords: {lat: 47.2643622, lng: -122.4484117},
           openingTimes: [{
             days: 'Monday - Friday',
-            opening: '7:00am',
+            opening: '5:00am',
             closing: '7:00pm',
             closed: false
           },{
             days: 'Saturday',
-            opening: '8:00am',
-            closing: '5:00pm',
+            opening: '6:00am',
+            closing: '7:00pm',
             closed: false
           },{
             days: 'Sunday',
-            closed: true
+            opening: '6:30am',
+            closing: '7:00pm',
+            closed: false
           }],
           reviews: [{
-            author: 'Simon Holmes',
-            rating: 5,
-            timestamp: '16 July 2013',
-            reviewText: 'What a great place. I can\'t say enough good things about it.'
-          },{
-            author: 'Bobby Trac',
-            rating: 2,
-            timestamp: '23 September 2017',
-            reviewText: 'It was meh. Coffee wasn\'t great, but the wifi was nice.'
+            author: 'Tom Smith',
+            rating: 3,
+            timestamp: '6 October 2016',
+            reviewText: 'The coffee tasted decent. Service was good.'
           }]
         }
     })
