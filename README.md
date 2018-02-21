@@ -1,7 +1,7 @@
 # Nathan Reinhardt Getting MEAN Project
 ## Chapter 5
 Link - https://mysterious-stream-60696.herokuapp.com/
-![Screenshot](Chapter5GettingMean.png)
+![Screenshot](Chapter5v2GettingMean.png)
 
 In Chapter 5 the book went into how to set up a local and live database for the website.
 It was pretty fun having a ton of console windows open performing different actions while
