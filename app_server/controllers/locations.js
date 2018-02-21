@@ -12,18 +12,18 @@ module.exports.homelist = function(req, res){
       address: '24 N Tacoma Ave, Tacoma, WA 98403',
       rating: 4,
       facilities: ['Hot drinks', 'Pastries', 'Smoothies'],
-      distance: 'unknown'
-    },{
-      name: 'Cafe Hero',
-      address: '125 High Street, Reading, RG6 1PS',
-      rating: 3,
-      facilities: ['Hot drinks', 'Food', 'Premium wifi'],
       distance: '200m'
     },{
-      name: 'Burger Queen',
-      address: '125 High Street, Reading, RG6 1PS',
-      rating: 2,
-      facilities: ['Food', 'Premium wifi'],
+      name: 'Oppenheimer Cafe',
+      address: '1500 N Warner St, Tacoma, WA 98416',
+      rating: 3,
+      facilities: ['Hot drinks', 'Food', 'Premium wifi'],
+      distance: '100m'
+    },{
+      name: 'Pegasus Coffee Bar',
+      address: '1218 3rd Ave # 103, Seattle, WA 98101',
+      rating: 4,
+      facilities: ['Hot Drinks', 'Food', 'Bar'],
       distance: '250m'
     }]
   });
@@ -63,7 +63,7 @@ module.exports.locationInfo = function(req, res) {
           }],
           reviews: [{
             author: 'Tom Smith',
-            rating: 3,
+            rating: 4,
             timestamp: '6 October 2016',
             reviewText: 'The coffee tasted decent. Service was good.'
           }]
