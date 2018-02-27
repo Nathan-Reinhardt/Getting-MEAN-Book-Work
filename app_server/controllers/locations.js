@@ -1,5 +1,22 @@
+var request = require('request');
+var apiOptions = {
+  server : "http://localhost:3000"
+};
+if (process.env.NODE_ENV === 'production') {
+  apiOptions.server = "https://mysterious-stream-60696.herokuapp.com/";
+}
+
 /* GET 'home' page */
-module.exports.homelist = function(req, res){
+var renderHomepage = function(req, res, responseBody){
+  var message;
+  if (!(responseBody instanceof Array)) {
+    message = "API lookup error";
+    responseBody = [];
+  } else {
+    if (!responseBody.length) {
+      message = "No places found nearby";
+    }
+  }
   res.render('locations-list', {
     title: 'Loc8r - find a place to work with wifi',
     pageHeader: {
@@ -7,68 +24,83 @@ module.exports.homelist = function(req, res){
       strapline: 'Find places to work with wifi near you!'
     },
     sidebar: "Looking for wifi and a seat? Loc8r helps you find places to work when out and about. Perhaps with coffee, cake or a pint? Let Loc8r help you find the place you're looking for.",
-    locations: [{
-      name: 'Tully\'s',
-      address: '24 N Tacoma Ave, Tacoma, WA 98403',
-      rating: 4,
-      facilities: ['Hot drinks','Pastries','Smoothies'],
-      distance: '200m'
-    },{
-      name: 'Oppenheimer Cafe',
-      address: '1500 N Warner St, Tacoma, WA 98416',
-      rating: 3,
-      facilities: ['Hot drinks','Food','Premium wifi'],
-      distance: '100m'
-    },{
-      name: 'Pegasus Coffee Bar',
-      address: '1218 3rd Ave # 103, Seattle, WA 98101',
-      rating: 4,
-      facilities: ['Hot Drinks','Food','Bar'],
-      distance: '250m'
-    }]
+    locations: responseBody,
+    message: message
   });
 };
-/* GET 'Location info' page */
-module.exports.locationInfo = function(req, res) {
-    res.render('location-info', {
-        title: 'Tully\'s',
-        pageHeader: {
-            title: 'Tully\'s'
-        },
-        sidebar: {
-            context: 'is on Loc8r because it has accessible wifi and space to sit down with your laptop and get some work done.',
-            callToAction: 'If you\'ve been and you like it - or if you don\'t - please leave a review to help other people just like you.'
-        },
-        location: {
-          name: 'Tully\'s',
-          address: '24 N Tacoma Ave, Tacoma, WA 98403',
-          rating: 4,
-          facilities: ['Hot drinks','Pastries','Smooties'],
-          coords: {lat: 47.2643622, lng: -122.4484117},
-          openingTimes: [{
-            days: 'Monday - Friday',
-            opening: '5:00am',
-            closing: '7:00pm',
-            closed: false
-          },{
-            days: 'Saturday',
-            opening: '6:00am',
-            closing: '7:00pm',
-            closed: false
-          },{
-            days: 'Sunday',
-            opening: '6:30am',
-            closing: '7:00pm',
-            closed: false
-          }],
-          reviews: [{
-            author: 'Tom Smith',
-            rating: 4,
-            timestamp: '6 October 2016',
-            reviewText: 'The coffee tasted decent. Service was good.'
-          }]
+
+module.exports.homelist = function(req, res){
+  var requestOptions, path;
+  path = '/api/locations';
+  requestOptions = {
+    url : apiOptions.server + path,
+    method : "GET",
+    json : {},
+    qs : {
+      lng : -122.4484117,
+      lat : 47.2643622,
+      maxDistance : 20
+    }
+  };
+  request(
+    requestOptions,
+    function(err, response, body) {
+      var i, data;
+      data = body;
+      if (response.statusCode === 200 && data.length) {
+        for (i=0; i<data.length; i++) {
+          data[i].distance = _formatDistance(data[i].distance);
         }
-    })
+      }
+      renderHomepage(req, res, data);
+    }
+  );
+}
+
+var _formatDistance = function (distance) {
+  var numDistance, unit;
+  if (distance > 1000) {
+    numDistance = parseFloat(distance / 1000).toFixed(1);
+    unit = 'km';
+  } else {
+    numDistance = parseInt(distance,10);
+    unit = 'm';
+  }
+  return numDistance + unit;
+};
+
+var renderDetailPage = function (req, res, locDetail) {
+  res.render('location-info', {
+    title: locDetail.name,
+    pageHeader: {title: locDetail.name},
+    sidebar: {
+      context: 'is on Loc8r because it has accessible wifi and space to sit down with your laptop and get some work done.',
+      callToAction: 'If you\'ve been and you like it - or if you don\'t - please leave a review to help other people just like you.'
+    },
+    location: locDetail
+  });
+}
+
+/* GET 'Location info' page */
+module.exports.locationInfo = function(req, res){
+  var requestOptions, path;
+  path = "/api/locations/" + req.params.locationid;
+  requestOptions = {
+    url : apiOptions.server + path,
+    method : "GET",
+    json : {}
+  };
+  request(
+    requestOptions,
+    function(err, response, body) {
+      var data = body;
+      data.coords = {
+        lng : body.coords[0],
+        lat : body.coords[1]
+      };
+      renderDetailPage(req, res, data);
+    }
+  );
 }
 
 /* GET 'Add review' page */
