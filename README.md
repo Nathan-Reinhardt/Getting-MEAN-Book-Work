@@ -1,4 +1,23 @@
 # Nathan Reinhardt Getting MEAN Project
+## Chapter 6
+Link - https://mysterious-stream-60696.herokuapp.com/
+![Screenshot](Chapter6p2GettingMean.png)
+![Screenshot](Chapter6p1GettingMean.png)
+
+In Chapter 6 the book went into how to use api with html and json. This chapter setup
+the skeleton for the active live database commands. The commands are there but they
+don't interact with everything yet. I had trouble trying to figure out how postman and
+my database connected. After finally seeing how they connected then I was able to
+understand how the commands on postman worked. Everything else in the chapter worked
+well for me. Just the postman connection learning took a bit.
+
+1. When the function locationCreate gets called the services recieve a request at
+   /api/locations
+2. Making a request to an api is in JSON data format returned from the server.
+3. Postman is used for testing an api which sends http requests and functions. 
+   Useful for receiving requests. Different from web browsers because it can do more
+   commands than just simple web browsers.
+
 ## Chapter 5
 Link - https://mysterious-stream-60696.herokuapp.com/
 ![Screenshot](Chapter5v2GettingMean.png)
@@ -14,10 +33,10 @@ Now the database has been set.
 
 1. Database entries in MongoDB are called documents.
 2. The difference between mongod and mongo are huge. mongod runs the database in the
-background in the machine, while mongo is the shell that allows you access to work with
-mongod.
+   background in the machine, while mongo is the shell that allows you access to work with
+   mongod.
 3. Heroku needs MLab to access our live database for Heroku. We can only run it locally
-without MLab.
+   without MLab.
 
 ## Chapter 4
 Link - https://mysterious-stream-60696.herokuapp.com/
