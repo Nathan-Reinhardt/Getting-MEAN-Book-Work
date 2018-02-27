@@ -11,19 +11,19 @@ module.exports.homelist = function(req, res){
       name: 'Tully\'s',
       address: '24 N Tacoma Ave, Tacoma, WA 98403',
       rating: 4,
-      facilities: ['Hot drinks', 'Pastries', 'Smoothies'],
+      facilities: ['Hot drinks','Pastries','Smoothies'],
       distance: '200m'
     },{
       name: 'Oppenheimer Cafe',
       address: '1500 N Warner St, Tacoma, WA 98416',
       rating: 3,
-      facilities: ['Hot drinks', 'Food', 'Premium wifi'],
+      facilities: ['Hot drinks','Food','Premium wifi'],
       distance: '100m'
     },{
       name: 'Pegasus Coffee Bar',
       address: '1218 3rd Ave # 103, Seattle, WA 98101',
       rating: 4,
-      facilities: ['Hot Drinks', 'Food', 'Bar'],
+      facilities: ['Hot Drinks','Food','Bar'],
       distance: '250m'
     }]
   });
@@ -43,7 +43,7 @@ module.exports.locationInfo = function(req, res) {
           name: 'Tully\'s',
           address: '24 N Tacoma Ave, Tacoma, WA 98403',
           rating: 4,
-          facilities: ['Hot drinks', 'Pastries', 'Smooties'],
+          facilities: ['Hot drinks','Pastries','Smooties'],
           coords: {lat: 47.2643622, lng: -122.4484117},
           openingTimes: [{
             days: 'Monday - Friday',
