@@ -6,6 +6,18 @@ if (process.env.NODE_ENV === 'production') {
   apiOptions.server = "https://mysterious-stream-60696.herokuapp.com/";
 }
 
+var _formatDistance = function (distance) {
+  var numDistance, unit;
+  if (distance >= 1000) {
+    numDistance = parseFloat(distance / 1000).toFixed(1);
+    unit = 'km';
+  } else {
+    numDistance = parseInt(distance,10);
+    unit = 'm';
+  }
+  return numDistance + unit;
+};
+
 /* GET 'home' page */
 var renderHomepage = function(req, res, responseBody){
   var message;
@@ -39,7 +51,7 @@ module.exports.homelist = function(req, res){
     qs : {
       lng : -122.4484117,
       lat : 47.2643622,
-      maxDistance : 20
+      maxDistance : 20000
     }
   };
   request(
@@ -56,18 +68,6 @@ module.exports.homelist = function(req, res){
     }
   );
 }
-
-var _formatDistance = function (distance) {
-  var numDistance, unit;
-  if (distance > 1000) {
-    numDistance = parseFloat(distance / 1000).toFixed(1);
-    unit = 'km';
-  } else {
-    numDistance = parseInt(distance,10);
-    unit = 'm';
-  }
-  return numDistance + unit;
-};
 
 var _showError = function (req, res, status) {
   var title, content;
