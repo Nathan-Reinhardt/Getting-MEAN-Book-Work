@@ -1,4 +1,20 @@
 # Nathan Reinhardt Getting MEAN Project
+## Chapter 7
+Link - https://mysterious-stream-60696.herokuapp.com/
+![Screenshot](Chapter7GettingMean.png)
+
+In Chapter 7 the goal was to take out all the hard-coded information from the app
+and then use the database for the information for the website. Also to test the methods
+created in the last chapter. The hard part in this chapter was not noticing that the path
+to the add my review page was not being used properly. Needed to add the object id into
+the locationid: position.  Everything else in the chapter went really smoothly.
+
+1. This chapter is now "consuming" the REST API that was created within chapter 6. All
+the location information is now being fed into the website from the database.
+2. When testing out the API lookup error, using the lng or lat as examples of values 
+to make invalid to test the errors.
+3. Javascript interprets lng or lat values of 0 as false.
+
 ## Chapter 6
 Link - https://mysterious-stream-60696.herokuapp.com/
 ![Screenshot](Chapter6p2GettingMean.png)
