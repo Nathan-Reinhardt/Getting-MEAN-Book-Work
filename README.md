@@ -1,4 +1,18 @@
 # Nathan Reinhardt Getting MEAN Project
+## Chapter 8
+Link - https://mysterious-stream-60696.herokuapp.com/
+![Screenshot](Chapter8GettingMean.png)
+
+In Chapter 8 was setting up angular onto on the project.  This chapter went really smmooth
+until the very end. I had only one error and it never threw the error, but apparently my
+layout.jade file had a part I missed that was mentioned in at the start of the chapter.
+There was never an error thrown, but the webpage it self while testing only showed the keywords
+that would hold the data instead of the data it self from the server.
+
+1. The code on the front-end framework is executed on the client side.
+2. Putting a console.log() statement in the AngularJS controller code will give the output 
+   from console in the browser under the development tools.
+
 ## Chapter 7
 Link - https://mysterious-stream-60696.herokuapp.com/
 ![Screenshot](Chapter7GettingMean.png)
