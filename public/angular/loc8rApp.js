@@ -77,7 +77,7 @@ function locationListCtrl ($scope, loc8rData, geolocation) {
   geolocation.getPosition($scope.getData,$scope.showError,$scope.noGeo);
 };
 
-var loc8rData = function ($http) {
+function loc8rData ($http) {
   var locationByCoords = function (lat, lng) {
     return $http.get('/api/locations?lng=' + lng + '&lat=' + lat + '&maxDistance=20000');
   };
@@ -88,8 +88,8 @@ var loc8rData = function ($http) {
 
 angular
   .module('loc8rApp')
-  .controller('locationListCtrl', locationListCtrl);
-  .filter('formatDistance', formatDistance);
-  .directive('ratingStars', ratingStars);
-  .service('loc8rData', loc8rData);
+  .controller('locationListCtrl', locationListCtrl)
+  .filter('formatDistance', formatDistance)
+  .directive('ratingStars', ratingStars)
+  .service('loc8rData', loc8rData)
   .service('geolocation', geolocation);

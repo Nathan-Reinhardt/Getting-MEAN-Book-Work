@@ -98,22 +98,6 @@ module.exports.locationInfo = function(req, res){
   });
 };
 
-var renderReviewForm = function (req, res, locDetail) {
-  res.render('location-review-form', {
-    title: 'Review ' + locDetail.name + ' on Loc8r',
-    pageHeader: { title: 'Review ' + locDetail.name },
-    error: req.query.err,
-    url: req.originalUrl
-  });
-};
-
-/* GET 'Add review' page */
-module.exports.addReview = function(req, res){
-  getLocationInfo(req, res, function(req, res, responseData) {
-    renderReviewForm(req, res, responseData);
-  });
-};
-
 /* POST 'Add review' page */
 module.exports.doAddReview = function(req, res){
   var requestOptions, path, locationid, postdata;
@@ -146,4 +130,20 @@ module.exports.doAddReview = function(req, res){
       }
     );
   }
+};
+
+var renderReviewForm = function (req, res, locDetail) {
+  res.render('location-review-form', {
+    title: 'Review ' + locDetail.name + ' on Loc8r',
+    pageHeader: { title: 'Review ' + locDetail.name },
+    error: req.query.err,
+    url: req.originalUrl
+  });
+};
+
+/* GET 'Add review' page */
+module.exports.addReview = function(req, res){
+  getLocationInfo(req, res, function(req, res, responseData) {
+    renderReviewForm(req, res, responseData);
+  });
 };
