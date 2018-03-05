@@ -1,5 +1,12 @@
 var mongoose = require( 'mongoose' );
-var gracefulShutdown;
+
+var gracefulShutdown = function(msg, callback) {
+  mongoose.connection.close(function() {
+    console.log('Mongoose disconnected through ' + msg);
+    callback();
+  })
+};
+
 var dbURI = 'mongodb://localhost/Loc8r';
 
 if (process.env.NODE_ENV === 'production') {
