@@ -1,4 +1,14 @@
 # Nathan Reinhardt Getting MEAN Project
+## Chapter 9
+Link - https://mysterious-stream-60696.herokuapp.com/
+![Screenshot](Chapter9GettingMean.png)
+
+In Chapter 9 it was all about setting up the app_client folder which now held our new
+home controller with our services and filters. This is a change from Chapter 8 because
+now all the functions are now in their own files. It is a good way of keeping your
+function away from other functions so it is more organized and easier to find them. The
+chapter went by pretty well, didn't run into to much debugging.
+
 ## Chapter 8
 Link - https://mysterious-stream-60696.herokuapp.com/
 ![Screenshot](Chapter8GettingMean.png)
@@ -6,12 +16,12 @@ Link - https://mysterious-stream-60696.herokuapp.com/
 In Chapter 8 the hardcoded code has now been replaced with the angular framework.  This
 chapter went really smmooth until the very end. I had only one error and it never threw
 the error, but apparently my layout.jade file had a part I missed that was mentioned in
-at the start of the chapter. There was never an error thrown, but the webpage it self 
+at the start of the chapter. There was never an error thrown, but the webpage it self
 while testing only showed the keywords that would hold the data instead of the data it
 self from the server.
 
 1. The code on the front-end framework is executed on the client side.
-2. Putting a console.log() statement in the AngularJS controller code will give the output 
+2. Putting a console.log() statement in the AngularJS controller code will give the output
    from console in the browser under the development tools.
 
 ## Chapter 7
@@ -26,7 +36,7 @@ the locationid: position.  Everything else in the chapter went really smoothly.
 
 1. This chapter is now "consuming" the REST API that was created within chapter 6. All
 the location information is now being fed into the website from the database.
-2. When testing out the API lookup error, using the lng or lat as examples of values 
+2. When testing out the API lookup error, using the lng or lat as examples of values
 to make invalid to test the errors.
 3. Javascript interprets lng or lat values of 0 as false.
 
@@ -45,7 +55,7 @@ well for me. Just the postman connection learning took a bit.
 1. When the function locationCreate gets called the services recieve a request at
    /api/locations
 2. Making a request to an api is in JSON data format returned from the server.
-3. Postman is used for testing an api which sends http requests and functions. 
+3. Postman is used for testing an api which sends http requests and functions.
    Useful for receiving requests. Different from web browsers because it can do more
    commands than just simple web browsers.
 
@@ -76,7 +86,7 @@ Link - https://mysterious-stream-60696.herokuapp.com/
 In Chapter 4, the website is now starting to have proper formatting. After finishing
 Chapter 4, I have built a better understanding on how a website can be formatted
 and getting really familiar with .jade files. The most challenging part was debugging
-the .jade files. The debugging most of the time came down to indentation errors. 
+the .jade files. The debugging most of the time came down to indentation errors.
 In the book on page 99, there is a small error. It shows location-info.js instead of
 the correct location-info.jade (listing 4.7). The error can crash the page since it
 is the wrong file type. This chapter also went in depth in the controllers and views folders.
@@ -94,7 +104,7 @@ Link - https://mysterious-stream-60696.herokuapp.com/
 
 In Chapter 3 we have a very basic setup for a webpage.  Most of this chapter taught
 the basics of using these new tools given at our disposal. Challenges that I had was
-making sure app_server was being set correctly cause I remember seting it correctly 
+making sure app_server was being set correctly cause I remember seting it correctly
 at first, but for some reason it didnt save those changes so my bootstrap was not giving
 off the proper theme. Seting everything up on a new device is probably the most
 challenging concept to do well.
