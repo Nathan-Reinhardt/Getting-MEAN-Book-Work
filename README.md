@@ -1,4 +1,74 @@
 # Nathan Reinhardt Getting MEAN Project
+## Chapter 8
+Link - https://mysterious-stream-60696.herokuapp.com/
+![Screenshot](Chapter8GettingMean.png)
+
+In Chapter 8 the hardcoded code has now been replaced with the angular framework.  This
+chapter went really smmooth until the very end. I had only one error and it never threw
+the error, but apparently my layout.jade file had a part I missed that was mentioned in
+at the start of the chapter. There was never an error thrown, but the webpage it self 
+while testing only showed the keywords that would hold the data instead of the data it
+self from the server.
+
+1. The code on the front-end framework is executed on the client side.
+2. Putting a console.log() statement in the AngularJS controller code will give the output 
+   from console in the browser under the development tools.
+
+## Chapter 7
+Link - https://mysterious-stream-60696.herokuapp.com/
+![Screenshot](Chapter7GettingMean.png)
+
+In Chapter 7 the goal was to take out all the hard-coded information from the app
+and then use the database for the information for the website. Also to test the methods
+created in the last chapter. The hard part in this chapter was not noticing that the path
+to the add my review page was not being used properly. Needed to add the object id into
+the locationid: position.  Everything else in the chapter went really smoothly.
+
+1. This chapter is now "consuming" the REST API that was created within chapter 6. All
+the location information is now being fed into the website from the database.
+2. When testing out the API lookup error, using the lng or lat as examples of values 
+to make invalid to test the errors.
+3. Javascript interprets lng or lat values of 0 as false.
+
+## Chapter 6
+Link - https://mysterious-stream-60696.herokuapp.com/
+![Screenshot](Chapter6p2GettingMean.png)
+![Screenshot](Chapter6p1GettingMean.png)
+
+In Chapter 6 the book went into how to use api with html and json. This chapter setup
+the skeleton for the active live database commands. The commands are there but they
+don't interact with everything yet. I had trouble trying to figure out how postman and
+my database connected. After finally seeing how they connected then I was able to
+understand how the commands on postman worked. Everything else in the chapter worked
+well for me. Just the postman connection learning took a bit.
+
+1. When the function locationCreate gets called the services recieve a request at
+   /api/locations
+2. Making a request to an api is in JSON data format returned from the server.
+3. Postman is used for testing an api which sends http requests and functions. 
+   Useful for receiving requests. Different from web browsers because it can do more
+   commands than just simple web browsers.
+
+## Chapter 5
+Link - https://mysterious-stream-60696.herokuapp.com/
+![Screenshot](Chapter5v2GettingMean.png)
+
+In Chapter 5 the book went into how to set up a local and live database for the website.
+It was pretty fun having a ton of console windows open performing different actions while
+creating the databases.  The hardest part for me was getting my dumped data pushed up to the
+live database. I had the right credentials for the data, but I kept getting Authentication
+Errors which meant either my databse host was typed wrong or the username and password could
+have been wrong. Went through each one at a time to see which one gave the error. I got it
+randomly entering the same information, so it could have been a one off error while typing.
+Now the database has been set.
+
+1. Database entries in MongoDB are called documents.
+2. The difference between mongod and mongo are huge. mongod runs the database in the
+   background in the machine, while mongo is the shell that allows you access to work with
+   mongod.
+3. Heroku needs MLab to access our live database for Heroku. We can only run it locally
+   without MLab.
+
 ## Chapter 4
 Link - https://mysterious-stream-60696.herokuapp.com/
 ![Screenshot](Chapter4GettingMean.png)
