@@ -4,8 +4,8 @@
     .module('loc8rApp')
     .controller('reviewModalCtrl', reviewModalCtrl);
 
-    reviewModalCtrl.$inject = ['$modalInstance', 'locationData'];
-    function reviewModalCtrl ($modalInstance, locationData) {
+    reviewModalCtrl.$inject = ['$ubiModalInstance', 'loc8rData', 'locationData'];
+    function reviewModalCtrl ($ubiModalInstance, loc8rData, locationData) {
       var vm = this;
       vm.locationData = locationData;
 
@@ -30,7 +30,7 @@
           vm.formError = "All fields required, please try again";
           return false;
         } else {
-        vm.doAddReview(vm.locationData.locationid, vm.formData);
+          vm.doAddReview(vm.locationData.locationid, vm.formData);
         }
       };
 
