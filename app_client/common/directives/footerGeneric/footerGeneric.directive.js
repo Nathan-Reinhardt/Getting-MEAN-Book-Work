@@ -1,8 +1,8 @@
 (function () {
 
   angular
-  .module('loc8rApp')
-  .directive('footerGeneric', footerGeneric);
+    .module('loc8rApp')
+    .directive('footerGeneric', footerGeneric);
 
   function footerGeneric () {
     return {
